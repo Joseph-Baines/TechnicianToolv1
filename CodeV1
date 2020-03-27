@@ -1,0 +1,194 @@
+using System;
+using System.Diagnostics;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Please enter the number corresponding with the utility you wish to execute.");
+            Console.WriteLine("");
+            Console.WriteLine("1: Display network configuration");
+            Console.WriteLine("2: Run a disk cleanup");
+            Console.WriteLine("3: Device Manager");
+            Console.WriteLine("4: Add admin administrator account");
+            Console.WriteLine("5: Retrieve Serial Number");
+            Console.WriteLine("6: Display all local user accounts");
+            Console.WriteLine("7: View and change system properties");
+            Console.WriteLine("8: Registry Editor");
+            Console.WriteLine("9: Add & Remove Programs");
+            Console.WriteLine("10: Control Panel");
+            string utility = Console.ReadLine();
+            if (utility == "1")
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "cmd.exe";
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.RedirectStandardInput = true;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.UseShellExecute = false;
+                process.Start();
+                process.StandardInput.WriteLine("ipconfig /all");
+                process.StandardInput.Flush();
+                process.StandardInput.Close();
+                process.WaitForExit();
+                Console.WriteLine(process.StandardOutput.ReadToEnd());
+                Console.ReadKey();
+            }
+            else if (utility == "2")
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "cmd.exe";
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.RedirectStandardInput = true;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.UseShellExecute = false;
+                process.Start();
+                process.StandardInput.WriteLine("cleanmgr.exe");
+                process.StandardInput.Flush();
+                process.StandardInput.Close();
+                process.WaitForExit();
+                Console.WriteLine(process.StandardOutput.ReadToEnd());
+                Console.ReadKey();
+            }
+            else if (utility == "3")
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "cmd.exe";
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.RedirectStandardInput = true;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.UseShellExecute = false;
+                process.Start();
+                process.StandardInput.WriteLine("devmgmt.msc");
+                process.StandardInput.Flush();
+                process.StandardInput.Close();
+                process.WaitForExit();
+                Console.WriteLine(process.StandardOutput.ReadToEnd());
+                Console.ReadKey();
+            }
+            else if (utility == "4")
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "cmd.exe";
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.RedirectStandardInput = true;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.UseShellExecute = false;
+                process.Start();
+                process.StandardInput.WriteLine("net user admin Adminpass1 /add");
+                process.StandardInput.Flush();
+                process.StandardInput.Close();
+                process.WaitForExit();
+                process.Start();
+                process.StandardInput.WriteLine("net localgroup administrators admin /add");
+                process.StandardInput.Flush();
+                process.StandardInput.Close();
+                process.WaitForExit();
+                Console.WriteLine(process.StandardOutput.ReadToEnd());
+                Console.ReadKey();
+            }
+            else if (utility == "5")
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "cmd.exe";
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.RedirectStandardInput = true;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.UseShellExecute = false;
+                process.Start();
+                process.StandardInput.WriteLine("wmic bios get serialnumber");
+                process.StandardInput.Flush();
+                process.StandardInput.Close();
+                process.WaitForExit();
+                Console.WriteLine(process.StandardOutput.ReadToEnd());
+                Console.ReadKey();
+            }
+            else if (utility == "6")
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "cmd.exe";
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.RedirectStandardInput = true;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.UseShellExecute = false;
+                process.Start();
+                process.StandardInput.WriteLine("net user");
+                process.StandardInput.Flush();
+                process.StandardInput.Close();
+                process.WaitForExit();
+                Console.WriteLine(process.StandardOutput.ReadToEnd());
+                Console.ReadKey();
+            }
+            else if (utility == "7")
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "cmd.exe";
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.RedirectStandardInput = true;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.UseShellExecute = false;
+                process.Start();
+                process.StandardInput.WriteLine("sysdm.cpl");
+                process.StandardInput.Flush();
+                process.StandardInput.Close();
+                process.WaitForExit();
+                Console.WriteLine(process.StandardOutput.ReadToEnd());
+                Console.ReadKey();
+            }
+            else if (utility == "8")
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "cmd.exe";
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.RedirectStandardInput = true;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.UseShellExecute = false;
+                process.Start();
+                process.StandardInput.WriteLine("regedit");
+                process.StandardInput.Flush();
+                process.StandardInput.Close();
+                process.WaitForExit();
+                Console.WriteLine(process.StandardOutput.ReadToEnd());
+                Console.ReadKey();
+            }
+            else if (utility == "9")
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "cmd.exe";
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.RedirectStandardInput = true;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.UseShellExecute = false;
+                process.Start();
+                process.StandardInput.WriteLine("appwiz.cpl ");
+                process.StandardInput.Flush();
+                process.StandardInput.Close();
+                process.WaitForExit();
+                Console.WriteLine(process.StandardOutput.ReadToEnd());
+                Console.ReadKey();
+            }
+            else if (utility == "10")
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "cmd.exe";
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.RedirectStandardInput = true;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.UseShellExecute = false;
+                process.Start();
+                process.StandardInput.WriteLine("control panel");
+                process.StandardInput.Flush();
+                process.StandardInput.Close();
+                process.WaitForExit();
+                Console.WriteLine(process.StandardOutput.ReadToEnd());
+                Console.ReadKey();
+            }
+        }
+    }
+}
