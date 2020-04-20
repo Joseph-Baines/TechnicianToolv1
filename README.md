@@ -11,3 +11,5 @@ Additional changes to make:  Create a UI, add more commands, loop the program to
 
 
 How to use my solution: Paste the code into Visual Studio and Run.  Otherwise, export as an EXE file and share among windows computers.
+
+*Note* The executable must be run as administrator to properly execute certain functions.
