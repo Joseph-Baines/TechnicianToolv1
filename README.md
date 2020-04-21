@@ -13,3 +13,7 @@ Additional changes to make:  Create a UI, add more commands, loop the program to
 How to use my solution: Paste the code into Visual Studio and Run.  Otherwise, export as an EXE file and share among windows computers.
 
 *Note* The executable must be run as administrator to properly execute certain functions.
+
+Update 1.1: Performance enhancements.
+
+Enclosed block in a while loop - Added 'Continue' Statements to return to beginning of the loop - Added X as the condition to satisfy terminating the loop and exiting the program - Added message informing user of how to terminate program
